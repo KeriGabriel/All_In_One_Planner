@@ -8,7 +8,17 @@
              Shell.NavBarIsVisible="False">
     <ContentPage.Content>
         <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
-            <Button VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}"/>
+            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <Label Text="All-In-One Planner" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+            <Label Text="Login" FontSize="30" HorizontalTextAlignment="Center" Padding="30,10,30,0"/>
+
+            <Entry Placeholder="Username" PlaceholderColor="DimGray"></Entry>
+            <Entry IsPassword="True" Placeholder="Password" PlaceholderColor="DimGray"></Entry>
+            <Button VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}" />
+
+            <Label HorizontalOptions="Center" Text="Create new Account" FontSize="Small"></Label>
+            <Button Text="Create" VerticalOptions="Center"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
