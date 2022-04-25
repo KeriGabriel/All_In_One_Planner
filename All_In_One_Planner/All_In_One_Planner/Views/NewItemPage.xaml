@@ -8,15 +8,30 @@
              ios:Page.UseSafeArea="true">
     <ContentPage.Content>
         <StackLayout Spacing="3" Padding="15">
-            <Label Text="Text" FontSize="Medium" />
+            <Label Text="Title" FontSize="Medium" />
             <Entry Text="{Binding Text, Mode=TwoWay}" FontSize="Medium" />
             <Label Text="Description" FontSize="Medium" />
             <Editor Text="{Binding Description, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+            <Label Text="Type of Activity" FontSize="Medium" />
+            <Picker x:Name="Activity"
+                    Title="Select an Activity"
+                    TitleColor="Firebrick">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Appointment</x:String>
+                        <x:String>Fun</x:String>
+                        <x:String>School</x:String>
+                        <x:String>Work</x:String>
+                        <x:String>Misc</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
             <StackLayout Orientation="Horizontal">
                 <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
                 <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
-    
+
 </ContentPage>

@@ -11,6 +11,7 @@ namespace All_In_One_Planner.ViewModels
     {
         private string text;
         private string description;
+        private string type;
 
         public NewItemViewModel()
         {
@@ -23,7 +24,8 @@ namespace All_In_One_Planner.ViewModels
         private bool ValidateSave()
         {
             return !String.IsNullOrWhiteSpace(text)
-                && !String.IsNullOrWhiteSpace(description);
+                && !String.IsNullOrWhiteSpace(description)
+                && !String.IsNullOrWhiteSpace(type);
         }
 
         public string Text
@@ -36,6 +38,11 @@ namespace All_In_One_Planner.ViewModels
         {
             get => description;
             set => SetProperty(ref description, value);
+        }
+        public string Type
+        {
+            get => type;
+            set => SetProperty(ref type, value);
         }
 
         public Command SaveCommand { get; }
@@ -53,7 +60,9 @@ namespace All_In_One_Planner.ViewModels
             {
                 Id = Guid.NewGuid().ToString(),
                 Text = Text,
-                Description = Description
+                Description = Description,
+                Date = DateTime.Now,
+                Type = Type
             };
 
             await DataStore.AddItemAsync(newItem);
