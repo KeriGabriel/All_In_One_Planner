@@ -18,7 +18,8 @@
             <Button VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}" />
 
             <Label HorizontalOptions="Center" Text="Create new Account" FontSize="Small"></Label>
-            <Button Text="Create" VerticalOptions="Center"></Button>
+            <Button VerticalOptions="Center" Text="Sign Up" Clicked="Button_Clicked" />
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
