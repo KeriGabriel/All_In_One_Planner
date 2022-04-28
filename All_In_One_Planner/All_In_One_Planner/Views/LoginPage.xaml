@@ -19,6 +19,7 @@
 
             <Label HorizontalOptions="Center" Text="Create new Account" FontSize="Small"></Label>
             <Button VerticalOptions="Center" Text="Sign Up" Clicked="Button_Clicked" />
+           
             
         </StackLayout>
     </ContentPage.Content>

@@ -22,5 +22,7 @@ namespace All_In_One_Planner.Views
         {
             await Navigation.PushAsync(new SignUpPage(), true);    
         }
+
+      
     }
 }

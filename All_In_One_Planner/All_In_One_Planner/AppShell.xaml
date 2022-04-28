@@ -81,14 +81,14 @@
     <FlyoutItem Title="Daily" Icon="icon_feed.png">
         <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:ItemsPage}" />
     </FlyoutItem>
-    <!--
+    
     <FlyoutItem Title="Calendar" Icon="icon_about.png">
-        <ShellContent Route="Calendar" ContentTemplate="{DataTemplate local:Calendar}" />
+        <ShellContent Route="CalendarPage" ContentTemplate="{DataTemplate local:CalendarPage}" />
     </FlyoutItem>
     <FlyoutItem Title="Weekly" Icon="icon_about.png">
         <ShellContent Route="WeeklyPage" ContentTemplate="{DataTemplate local:WeeklyPage}" />
     </FlyoutItem>
-    -->
+    
     <FlyoutItem Title="About" Icon="icon_about.png">
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
     </FlyoutItem>

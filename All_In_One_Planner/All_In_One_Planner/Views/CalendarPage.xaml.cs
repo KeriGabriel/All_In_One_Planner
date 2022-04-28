@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace All_In_One_Planner.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Calendar : ContentView
+    public partial class CalendarPage : ContentPage
     {
-        public Calendar()
+        public CalendarPage()
         {
             InitializeComponent();
         }
