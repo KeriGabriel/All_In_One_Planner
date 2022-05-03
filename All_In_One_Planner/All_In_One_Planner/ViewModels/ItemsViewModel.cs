@@ -19,7 +19,7 @@ namespace All_In_One_Planner.ViewModels
 
         public ItemsViewModel()
         {
-            Title = "Browse";
+            Title = "Daily";
             Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 

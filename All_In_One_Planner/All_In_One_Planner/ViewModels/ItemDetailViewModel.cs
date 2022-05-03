@@ -12,6 +12,7 @@ namespace All_In_One_Planner.ViewModels
         private string itemId;
         private string text;
         private string description;
+        private string type;
         public string Id { get; set; }
 
         public string Text
@@ -25,7 +26,11 @@ namespace All_In_One_Planner.ViewModels
             get => description;
             set => SetProperty(ref description, value);
         }
-
+        public string Type
+        {
+            get => type;
+            set => SetProperty(ref description, value);
+        }
         public string ItemId
         {
             get
@@ -46,6 +51,7 @@ namespace All_In_One_Planner.ViewModels
                 var item = await DataStore.GetItemAsync(itemId);
                 Id = item.Id;
                 Text = item.Text;
+                Type = item.Type;
                 Description = item.Description;
             }
             catch (Exception)

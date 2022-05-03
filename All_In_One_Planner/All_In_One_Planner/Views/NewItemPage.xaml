@@ -15,7 +15,7 @@
             <Label Text="Type of Activity" FontSize="Medium" />
             <Picker x:Name="Activity"
                     Title="Select an Activity"
-                    TitleColor="Firebrick">
+                    >
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Appointment</x:String>
@@ -26,7 +26,6 @@
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
-
             <StackLayout Orientation="Horizontal">
                 <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
                 <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>

@@ -24,8 +24,7 @@ namespace All_In_One_Planner.ViewModels
         private bool ValidateSave()
         {
             return !String.IsNullOrWhiteSpace(text)
-                && !String.IsNullOrWhiteSpace(description)
-                && !String.IsNullOrWhiteSpace(type);
+                && !String.IsNullOrWhiteSpace(description);
         }
 
         public string Text
