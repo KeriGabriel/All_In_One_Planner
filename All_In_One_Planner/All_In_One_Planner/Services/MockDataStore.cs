@@ -14,12 +14,10 @@ namespace All_In_One_Planner.Services
         {
             items = new List<Item>()
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." }
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Christmas", Description="Christmas Shopping.", Date=new DateTime(2022, 12, 25) },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Holloween", Description="Spoopy day",Date=new DateTime(2022, 10, 31, 0, 0, 0) },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Thanksgiving", Description="Turkey day",Date=new DateTime(2022, 12, 25, 0, 0, 0) },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Independance Day", Description="Fireworks and Freedom",  Date=new DateTime(2022, 7, 4, 0, 0, 0)}
             };
         }
 

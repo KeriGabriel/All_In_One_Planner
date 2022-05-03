@@ -12,6 +12,7 @@ namespace All_In_One_Planner.ViewModels
         private string text;
         private string description;
         private string type;
+        private DateTime date;
 
         public NewItemViewModel()
         {
@@ -43,7 +44,11 @@ namespace All_In_One_Planner.ViewModels
             get => type;
             set => SetProperty(ref type, value);
         }
-
+        public DateTime Date
+        {
+            get => date;
+            set => SetProperty(ref date, value);
+        }
         public Command SaveCommand { get; }
         public Command CancelCommand { get; }
 
@@ -60,7 +65,7 @@ namespace All_In_One_Planner.ViewModels
                 Id = Guid.NewGuid().ToString(),
                 Text = Text,
                 Description = Description,
-                Date = DateTime.Now,
+                Date = Date,
                 Type = Type
             };
 

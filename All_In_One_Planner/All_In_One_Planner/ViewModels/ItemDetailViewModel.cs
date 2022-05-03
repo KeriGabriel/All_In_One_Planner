@@ -13,6 +13,7 @@ namespace All_In_One_Planner.ViewModels
         private string text;
         private string description;
         private string type;
+        private DateTime date;
         public string Id { get; set; }
 
         public string Text
@@ -29,7 +30,12 @@ namespace All_In_One_Planner.ViewModels
         public string Type
         {
             get => type;
-            set => SetProperty(ref description, value);
+            set => SetProperty(ref type, value);
+        }
+        public DateTime DateSet
+        {
+            get => date;
+            set => SetProperty(ref date, value);
         }
         public string ItemId
         {
@@ -53,6 +59,7 @@ namespace All_In_One_Planner.ViewModels
                 Text = item.Text;
                 Type = item.Type;
                 Description = item.Description;
+                DateSet = item.Date;
             }
             catch (Exception)
             {
