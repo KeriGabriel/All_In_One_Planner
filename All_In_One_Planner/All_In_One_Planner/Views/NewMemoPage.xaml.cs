@@ -8,14 +8,14 @@ using Xamarin.Forms.Xaml;
 
 namespace All_In_One_Planner.Views
 {
-    public partial class NewItemPage : ContentPage
+    public partial class NewMemoPage : ContentPage
     {
         public Item Item { get; set; }
 
-        public NewItemPage()
+        public NewMemoPage()
         {
             InitializeComponent();
-            BindingContext = new NewItemViewModel();
+            BindingContext = new NewMemoViewModel();
         }
     }
 }

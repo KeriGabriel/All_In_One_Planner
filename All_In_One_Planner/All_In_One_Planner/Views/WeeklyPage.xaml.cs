@@ -16,6 +16,7 @@ namespace All_In_One_Planner.Views
         public WeeklyPage()
         {
             InitializeComponent();
+            BindingContext = new CalendarViewModel();
         }
     }
 }

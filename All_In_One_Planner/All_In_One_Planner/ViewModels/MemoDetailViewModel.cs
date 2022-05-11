@@ -7,14 +7,18 @@ using Xamarin.Forms;
 namespace All_In_One_Planner.ViewModels
 {
     [QueryProperty(nameof(ItemId), nameof(ItemId))]
-    public class ItemDetailViewModel : BaseViewModel
+    public class MemoDetailViewModel : BaseViewModel
     {
-        private string itemId;
+        private int itemId;
         private string text;
         private string description;
         private string type;
         private DateTime date;
-        public string Id { get; set; }
+        public int ID
+        {
+            get => itemId;
+            set => SetProperty(ref itemId, value);
+        }
 
         public string Text
         {
@@ -37,7 +41,7 @@ namespace All_In_One_Planner.ViewModels
             get => date;
             set => SetProperty(ref date, value);
         }
-        public string ItemId
+        public int ItemId
         {
             get
             {
@@ -50,12 +54,12 @@ namespace All_In_One_Planner.ViewModels
             }
         }
 
-        public async void LoadItemId(string itemId)
+        public async void LoadItemId(int itemId)
         {
             try
             {
                 var item = await DataStore.GetItemAsync(itemId);
-                Id = item.Id;
+                ID = item.ID;
                 Text = item.Text;
                 Type = item.Type;
                 Description = item.Description;

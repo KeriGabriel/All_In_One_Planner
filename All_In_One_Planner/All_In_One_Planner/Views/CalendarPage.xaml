@@ -4,8 +4,9 @@
              xmlns:local="clr-namespace:All_In_One_Planner.ViewModels"
              xmlns:model="clr-namespace:All_In_One_Planner.Models"
             xmlns:controls="clr-namespace:Xamarin.Plugin.Calendar.Controls;assembly=Xamarin.Plugin.Calendar"
-             x:Class="All_In_One_Planner.Views.CalendarPage">
-    
+             x:Class="All_In_One_Planner.Views.CalendarPage"
+             Title="Monthly">
+            
    <!--This need to have a model page for the binding dates--> 
 
     <ContentPage.Content>

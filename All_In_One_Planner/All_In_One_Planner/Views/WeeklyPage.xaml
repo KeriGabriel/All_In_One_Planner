@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
            xmlns:controls="clr-namespace:Xamarin.Plugin.Calendar.Controls;assembly=Xamarin.Plugin.Calendar"
-             x:Class="All_In_One_Planner.Views.WeeklyPage">
+             x:Class="All_In_One_Planner.Views.WeeklyPage"
+             Title="Weekly">
     <ContentPage.Content>
         <controls:Calendar
             CalendarLayout="Week"

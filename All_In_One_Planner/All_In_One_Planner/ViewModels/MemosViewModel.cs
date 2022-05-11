@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace All_In_One_Planner.ViewModels
 {
-    public class ItemsViewModel : BaseViewModel
+    public class MemosViewModel : BaseViewModel
     {
         private Item _selectedItem;
 
@@ -17,7 +17,7 @@ namespace All_In_One_Planner.ViewModels
         public Command AddItemCommand { get; }
         public Command<Item> ItemTapped { get; }
 
-        public ItemsViewModel()
+        public MemosViewModel()
         {
             Title = "Daily";
             Items = new ObservableCollection<Item>();
@@ -69,7 +69,7 @@ namespace All_In_One_Planner.ViewModels
 
         private async void OnAddItem(object obj)
         {
-            await Shell.Current.GoToAsync(nameof(NewItemPage));
+            await Shell.Current.GoToAsync(nameof(NewMemoPage));
         }
 
         async void OnItemSelected(Item item)
@@ -78,7 +78,7 @@ namespace All_In_One_Planner.ViewModels
                 return;
 
             // This will push the ItemDetailPage onto the navigation stack
-            await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(ItemDetailViewModel.ItemId)}={item.Id}");
+            await Shell.Current.GoToAsync($"{nameof(MemoDetailPage)}?{nameof(MemoDetailViewModel.ItemId)}={item.ID}");
         }
     }
 }

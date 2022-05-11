@@ -4,12 +4,12 @@ using Xamarin.Forms;
 
 namespace All_In_One_Planner.Views
 {
-    public partial class ItemDetailPage : ContentPage
+    public partial class MemoDetailPage : ContentPage
     {
-        public ItemDetailPage()
+        public MemoDetailPage()
         {
             InitializeComponent();
-            BindingContext = new ItemDetailViewModel();
+            BindingContext = new MemoDetailViewModel();
         }
     }
 }

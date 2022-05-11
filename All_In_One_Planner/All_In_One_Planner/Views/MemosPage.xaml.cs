@@ -12,15 +12,15 @@ using Xamarin.Forms.Xaml;
 
 namespace All_In_One_Planner.Views
 {
-    public partial class ItemsPage : ContentPage
+    public partial class MemosPage : ContentPage
     {
-        ItemsViewModel _viewModel;
+        MemosViewModel _viewModel;
 
-        public ItemsPage()
+        public MemosPage()
         {
             InitializeComponent();
 
-            BindingContext = _viewModel = new ItemsViewModel();
+            BindingContext = _viewModel = new MemosViewModel();
         }
 
         protected override void OnAppearing()

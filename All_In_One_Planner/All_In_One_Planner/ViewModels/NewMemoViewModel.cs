@@ -4,17 +4,17 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
-
+using System.Threading;
 namespace All_In_One_Planner.ViewModels
 {
-    public class NewItemViewModel : BaseViewModel
+    public class NewMemoViewModel : BaseViewModel
     {
+        //private int _id;
         private string text;
         private string description;
         private string type;
         private DateTime date;
-
-        public NewItemViewModel()
+        public NewMemoViewModel()
         {
             SaveCommand = new Command(OnSave, ValidateSave);
             CancelCommand = new Command(OnCancel);
@@ -28,6 +28,21 @@ namespace All_In_One_Planner.ViewModels
                 && !String.IsNullOrWhiteSpace(description);
         }
 
+        //public int GenerateId(int _id)
+        //{
+
+        //    {
+        //        Interlocked.Increment(ref _id);
+        //    }
+        //    return _id;
+        //}
+
+        // Remainder of Program unchange
+        //public int ID 
+        //{
+        //    get => _id;
+        //    set => SetProperty(ref _id, value);
+        //}
         public string Text
         {
             get => text;
@@ -57,12 +72,11 @@ namespace All_In_One_Planner.ViewModels
             // This will pop the current page off the navigation stack
             await Shell.Current.GoToAsync("..");
         }
-
         private async void OnSave()
         {
             Item newItem = new Item()
             {
-                Id = Guid.NewGuid().ToString(),
+                //ID = GenerateId(_id),
                 Text = Text,
                 Description = Description,
                 Date = Date,

@@ -11,8 +11,8 @@ namespace All_In_One_Planner
         public AppShell()
         {
             InitializeComponent();
-            Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
-            Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
+            Routing.RegisterRoute(nameof(MemoDetailPage), typeof(MemoDetailPage));
+            Routing.RegisterRoute(nameof(NewMemoPage), typeof(NewMemoPage));
             Routing.RegisterRoute(nameof(WeeklyPage), typeof(WeeklyPage));
         }
 
