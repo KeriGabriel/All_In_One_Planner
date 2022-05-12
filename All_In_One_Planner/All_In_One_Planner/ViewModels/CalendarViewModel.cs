@@ -30,27 +30,27 @@ namespace All_In_One_Planner.ViewModels
             Events = new EventCollection
             {
 
-                [DateTime.Now] = new List<Item>
+                [DateTime.Now] = new List<Memo>
 
                 {
-                    new Item { Text = "Cool event1", Description = "This is Cool event1's description!" },
-                    new Item { Text = "Cool event2", Description = "This is Cool event2's description!" }
+                    new Memo { Text = "Cool event1", Description = "This is Cool event1's description!" },
+                    new Memo { Text = "Cool event2", Description = "This is Cool event2's description!" }
                 },
                 // 5 days from today
-                [DateTime.Now.AddDays(5)] = new List<Item>
+                [DateTime.Now.AddDays(5)] = new List<Memo>
                 {
-                    new Item { Text = "Cool event3", Description = "This is Cool event3's description!" },
-                    new Item { Text = "Cool event4", Description = "This is Cool event4's description!" }
+                    new Memo { Text = "Cool event3", Description = "This is Cool event3's description!" },
+                    new Memo { Text = "Cool event4", Description = "This is Cool event4's description!" }
                 },
                 // 3 days ago
-                [DateTime.Now.AddDays(-3)] = new List<Item>
+                [DateTime.Now.AddDays(-3)] = new List<Memo>
                 {
-                    new Item { Text = "Cool event5", Description = "This is Cool event5's description!" }
+                    new Memo { Text = "Cool event5", Description = "This is Cool event5's description!" }
                 },
                 // custom date
-                [new DateTime(2020, 3, 16)] = new List<Item>
+                [new DateTime(2020, 3, 16)] = new List<Memo>
                 {
-                    new Item { Text = "Cool event6", Description = "This is Cool event6's description!" }
+                    new Memo { Text = "Cool event6", Description = "This is Cool event6's description!" }
                 }
             };
 

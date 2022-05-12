@@ -10,7 +10,7 @@ namespace All_In_One_Planner.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
+        public IDataStore<Memo> DataStore => DependencyService.Get<IDataStore<Memo>>();
 
         bool isBusy = false;
         public bool IsBusy

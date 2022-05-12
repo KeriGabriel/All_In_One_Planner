@@ -6,7 +6,7 @@ namespace All_In_One_Planner.Models
 {
     public class Account
     {
-        public int Id { get; set; }
+        public int AccountID { get; set; }
         public string Name { get; set; }
         public string Password { get; set; }
         //public bool Enabled { get; set; }   

@@ -10,7 +10,7 @@ namespace All_In_One_Planner.Views
 {
     public partial class NewMemoPage : ContentPage
     {
-        public Item Item { get; set; }
+        public Memo Item { get; set; }
 
         public NewMemoPage()
         {

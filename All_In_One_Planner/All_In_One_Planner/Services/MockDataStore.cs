@@ -6,31 +6,31 @@ using System.Threading.Tasks;
 
 namespace All_In_One_Planner.Services
 {
-    public class MockDataStore : IDataStore<Item>
+    public class MockDataStore : IDataStore<Memo>
     {
-        readonly List<Item> items;
+        readonly List<Memo> items;
 
         public MockDataStore()
         {
-            items = new List<Item>()
+            items = new List<Memo>()
             {
-                new Item { ID = 0, Text = "Christmas", Description="Christmas Shopping.", Date=new DateTime(2022, 12, 25) },
-                new Item { ID = 1, Text = "Holloween", Description="Spoopy day",Date=new DateTime(2022, 10, 31, 0, 0, 0) },
-                new Item { ID = 2, Text = "Thanksgiving", Description="Turkey day",Date=new DateTime(2022, 11, 24, 0, 0, 0) },
-                new Item { ID = 3, Text = "Independance Day", Description="Fireworks and Freedom",  Date=new DateTime(2022, 7, 4, 0, 0, 0)}
+                new Memo { MemoID = 0, Text = "Christmas", Description="Christmas Shopping.", Date=new DateTime(2022, 12, 25) },
+                new Memo { MemoID = 1, Text = "Holloween", Description="Spoopy day",Date=new DateTime(2022, 10, 31, 0, 0, 0) },
+                new Memo { MemoID = 2, Text = "Thanksgiving", Description="Turkey day",Date=new DateTime(2022, 11, 24, 0, 0, 0) },
+                new Memo { MemoID = 3, Text = "Independance Day", Description="Fireworks and Freedom",  Date=new DateTime(2022, 7, 4, 0, 0, 0)}
             };
         }
 
-        public async Task<bool> AddItemAsync(Item item)
+        public async Task<bool> AddItemAsync(Memo item)
         {
             items.Add(item);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> UpdateItemAsync(Item item)
+        public async Task<bool> UpdateItemAsync(Memo item)
         {
-            var oldItem = items.Where((Item arg) => arg.ID == item.ID).FirstOrDefault();
+            var oldItem = items.Where((Memo arg) => arg.MemoID == item.MemoID).FirstOrDefault();
             items.Remove(oldItem);
             items.Add(item);
 
@@ -39,22 +39,22 @@ namespace All_In_One_Planner.Services
 
         public async Task<bool> DeleteItemAsync(int id)
         {
-            var oldItem = items.Where((Item arg) => arg.ID == id).FirstOrDefault();
+            var oldItem = items.Where((Memo arg) => arg.MemoID == id).FirstOrDefault();
             items.Remove(oldItem);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<Item> GetItemAsync(int id)
+        public async Task<Memo> GetItemAsync(int id)
         {
-            return await Task.FromResult(items.FirstOrDefault(s => s.ID == id));
+            return await Task.FromResult(items.FirstOrDefault(s => s.MemoID == id));
         }
 
-        public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<Memo>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(items);
         }
-        public async Task<Item> GetItemAsync(DateTime date)
+        public async Task<Memo> GetItemAsync(DateTime date)
         {
             return await Task.FromResult(items.FirstOrDefault(s => s.Date == date));
         }

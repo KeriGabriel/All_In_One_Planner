@@ -10,20 +10,20 @@ namespace All_In_One_Planner.ViewModels
 {
     public class MemosViewModel : BaseViewModel
     {
-        private Item _selectedItem;
+        private Memo _selectedItem;
 
-        public ObservableCollection<Item> Items { get; }
+        public ObservableCollection<Memo> Items { get; }
         public Command LoadItemsCommand { get; }
         public Command AddItemCommand { get; }
-        public Command<Item> ItemTapped { get; }
+        public Command<Memo> ItemTapped { get; }
 
         public MemosViewModel()
         {
             Title = "Daily";
-            Items = new ObservableCollection<Item>();
+            Items = new ObservableCollection<Memo>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            ItemTapped = new Command<Item>(OnItemSelected);
+            ItemTapped = new Command<Memo>(OnItemSelected);
 
             AddItemCommand = new Command(OnAddItem);
         }
@@ -57,7 +57,7 @@ namespace All_In_One_Planner.ViewModels
             SelectedItem = null;
         }
 
-        public Item SelectedItem
+        public Memo SelectedItem
         {
             get => _selectedItem;
             set
@@ -72,13 +72,13 @@ namespace All_In_One_Planner.ViewModels
             await Shell.Current.GoToAsync(nameof(NewMemoPage));
         }
 
-        async void OnItemSelected(Item item)
+        async void OnItemSelected(Memo item)
         {
             if (item == null)
                 return;
 
             // This will push the ItemDetailPage onto the navigation stack
-            await Shell.Current.GoToAsync($"{nameof(MemoDetailPage)}?{nameof(MemoDetailViewModel.ItemId)}={item.ID}");
+            await Shell.Current.GoToAsync($"{nameof(MemoDetailPage)}?{nameof(MemoDetailViewModel.ItemId)}={item.MemoID}");
         }
     }
 }

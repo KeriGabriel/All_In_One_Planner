@@ -74,7 +74,7 @@ namespace All_In_One_Planner.ViewModels
         }
         private async void OnSave()
         {
-            Item newItem = new Item()
+            Memo newItem = new Memo()
             {
                 //ID = GenerateId(_id),
                 Text = Text,
