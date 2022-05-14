@@ -13,7 +13,7 @@ namespace All_In_One_Planner
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+            DependencyService.Register<MockData>();
             MainPage = new AppShell();
         }
 

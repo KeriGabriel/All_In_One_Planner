@@ -19,7 +19,7 @@ namespace All_In_One_Planner.ViewModels
         {
             Title = "Calendar";
             int count = 0;
-            MockDataStore mockData = new MockDataStore();
+            MockData mockData = new MockData();
             DateTime date;
             // date = mockData.GetItemAsync(date);
 

@@ -83,7 +83,7 @@ namespace All_In_One_Planner.ViewModels
                 Type = Type
             };
 
-            await DataStore.AddItemAsync(newItem);
+            await DataStore.AddMemoAsync(newItem);
 
             // This will pop the current page off the navigation stack
             await Shell.Current.GoToAsync("..");

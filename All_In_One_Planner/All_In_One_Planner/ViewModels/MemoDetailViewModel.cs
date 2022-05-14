@@ -54,7 +54,7 @@ namespace All_In_One_Planner.ViewModels
         {
             try
             {
-                var item = await DataStore.GetItemAsync(itemId);
+                var item = await DataStore.GetMemoAsync(itemId);
                 ID = item.MemoID;
                 Text = item.Text;
                 Type = item.Type;

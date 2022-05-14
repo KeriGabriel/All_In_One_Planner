@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace All_In_One_Planner.Services
 {
-    public class MockDataStore : IDataStore<Memo>
+    public class MockData : IData<Memo>
     {
         readonly List<Memo> items;
 
-        public MockDataStore()
+        public MockData()
         {
             items = new List<Memo>()
             {
@@ -21,14 +21,14 @@ namespace All_In_One_Planner.Services
             };
         }
 
-        public async Task<bool> AddItemAsync(Memo item)
+        public async Task<bool> AddMemoAsync(Memo item)
         {
             items.Add(item);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> UpdateItemAsync(Memo item)
+        public async Task<bool> UpdateMemoAsync(Memo item)
         {
             var oldItem = items.Where((Memo arg) => arg.MemoID == item.MemoID).FirstOrDefault();
             items.Remove(oldItem);
@@ -37,7 +37,7 @@ namespace All_In_One_Planner.Services
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> DeleteItemAsync(string id)
+        public async Task<bool> DeleteMemoAsync(string id)
         {
             var oldItem = items.Where((Memo arg) => arg.MemoID == id).FirstOrDefault();
             items.Remove(oldItem);
@@ -45,12 +45,12 @@ namespace All_In_One_Planner.Services
             return await Task.FromResult(true);
         }
 
-        public async Task<Memo> GetItemAsync(string id)
+        public async Task<Memo> GetMemoAsync(string id)
         {
             return await Task.FromResult(items.FirstOrDefault(s => s.MemoID == id));
         }
 
-        public async Task<IEnumerable<Memo>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<Memo>> GetMemoAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(items);
         }
