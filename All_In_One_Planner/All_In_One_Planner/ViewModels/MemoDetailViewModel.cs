@@ -9,12 +9,12 @@ namespace All_In_One_Planner.ViewModels
     [QueryProperty(nameof(ItemId), nameof(ItemId))]
     public class MemoDetailViewModel : BaseViewModel
     {
-        private int itemId;
+        private string itemId;
         private string text;
         private string description;
         private string type;
         private DateTime date;
-        public int ID {get;set;}
+        public string ID {get;set;}
 
         public string Text
         {
@@ -37,7 +37,7 @@ namespace All_In_One_Planner.ViewModels
             get => date;
             set => SetProperty(ref date, value);
         }
-        public int ItemId
+        public string ItemId
         {
             get
             {
@@ -50,7 +50,7 @@ namespace All_In_One_Planner.ViewModels
             }
         }
 
-        public async void LoadItemId(int itemId)
+        public async void LoadItemId(string itemId)
         {
             try
             {

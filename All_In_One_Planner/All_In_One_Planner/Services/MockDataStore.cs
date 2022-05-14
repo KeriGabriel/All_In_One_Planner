@@ -14,10 +14,10 @@ namespace All_In_One_Planner.Services
         {
             items = new List<Memo>()
             {
-                new Memo { MemoID = 0, Text = "Christmas", Description="Christmas Shopping.", Date=new DateTime(2022, 12, 25) },
-                new Memo { MemoID = 1, Text = "Holloween", Description="Spoopy day",Date=new DateTime(2022, 10, 31, 0, 0, 0) },
-                new Memo { MemoID = 2, Text = "Thanksgiving", Description="Turkey day",Date=new DateTime(2022, 11, 24, 0, 0, 0) },
-                new Memo { MemoID = 3, Text = "Independance Day", Description="Fireworks and Freedom",  Date=new DateTime(2022, 7, 4, 0, 0, 0)}
+                new Memo { MemoID = Guid.NewGuid().ToString(), Text = "Christmas", Description="Christmas Shopping.", Date=new DateTime(2022, 12, 25) },
+                new Memo { MemoID = Guid.NewGuid().ToString(), Text = "Holloween", Description="Spoopy day",Date=new DateTime(2022, 10, 31, 0, 0, 0) },
+                new Memo { MemoID = Guid.NewGuid().ToString(), Text = "Thanksgiving", Description="Turkey day",Date=new DateTime(2022, 11, 24, 0, 0, 0) },
+                new Memo { MemoID = Guid.NewGuid().ToString(), Text = "Independance Day", Description="Fireworks and Freedom",  Date=new DateTime(2022, 7, 4, 0, 0, 0)}
             };
         }
 
@@ -37,7 +37,7 @@ namespace All_In_One_Planner.Services
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> DeleteItemAsync(int id)
+        public async Task<bool> DeleteItemAsync(string id)
         {
             var oldItem = items.Where((Memo arg) => arg.MemoID == id).FirstOrDefault();
             items.Remove(oldItem);
@@ -45,7 +45,7 @@ namespace All_In_One_Planner.Services
             return await Task.FromResult(true);
         }
 
-        public async Task<Memo> GetItemAsync(int id)
+        public async Task<Memo> GetItemAsync(string id)
         {
             return await Task.FromResult(items.FirstOrDefault(s => s.MemoID == id));
         }
