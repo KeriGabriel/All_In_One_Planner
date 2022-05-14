@@ -15,7 +15,7 @@
             <Label Text="Type of Activity" FontSize="Medium" />
             <Picker x:Name="Activity"
                     Title="Select an Activity"
-                    >
+                    SelectedItem="{Binding Type, Mode=TwoWay}"                   >
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Appointment</x:String>

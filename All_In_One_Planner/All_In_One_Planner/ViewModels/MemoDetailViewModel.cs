@@ -14,11 +14,7 @@ namespace All_In_One_Planner.ViewModels
         private string description;
         private string type;
         private DateTime date;
-        public int ID
-        {
-            get => itemId;
-            set => SetProperty(ref itemId, value);
-        }
+        public int ID {get;set;}
 
         public string Text
         {
