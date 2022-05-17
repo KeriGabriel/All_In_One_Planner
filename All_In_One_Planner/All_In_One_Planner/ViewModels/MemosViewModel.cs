@@ -1,4 +1,5 @@
 ﻿using All_In_One_Planner.Models;
+using All_In_One_Planner.Services;
 using All_In_One_Planner.Views;
 using System;
 using System.Collections.ObjectModel;
@@ -16,17 +17,17 @@ namespace All_In_One_Planner.ViewModels
         public Command LoadItemsCommand { get; }
         public Command AddItemCommand { get; }
         public Command<Memo> ItemTapped { get; }
-
-        public MemosViewModel()
+        private PlannerAPIService MyAPI { get; set; }
+        public MemosViewModel(PlannerAPIService service)
         {
+            MyAPI = service;
             Title = "Daily";
             Items = new ObservableCollection<Memo>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
-
             ItemTapped = new Command<Memo>(OnItemSelected);
-
             AddItemCommand = new Command(OnAddItem);
         }
+        
 
         async Task ExecuteLoadItemsCommand()
         {
@@ -35,7 +36,8 @@ namespace All_In_One_Planner.ViewModels
             try
             {
                 Items.Clear();
-                var items = await DataStore.GetMemoAsync(true);
+                // var items = await DataStore.GetMemoAsync(true);
+                var items = await MyAPI.GetMemoAsync(true);
                 foreach (var item in items)
                 {
                     Items.Add(item);

@@ -14,6 +14,7 @@ namespace All_In_One_Planner
             InitializeComponent();
 
             DependencyService.Register<MockData>();
+            DependencyService.Register<PlannerAPIService>();
             MainPage = new AppShell();
         }
 

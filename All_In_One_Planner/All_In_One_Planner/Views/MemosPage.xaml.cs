@@ -9,18 +9,20 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using All_In_One_Planner.Services;
 
 namespace All_In_One_Planner.Views
 {
     public partial class MemosPage : ContentPage
     {
         MemosViewModel _viewModel;
+        private PlannerAPIService _plannerAPIService = new PlannerAPIService();
 
         public MemosPage()
         {
             InitializeComponent();
 
-            BindingContext = _viewModel = new MemosViewModel();
+            BindingContext = _viewModel = new MemosViewModel(_plannerAPIService);
         }
 
         protected override void OnAppearing()
