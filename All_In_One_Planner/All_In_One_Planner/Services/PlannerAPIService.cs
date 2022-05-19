@@ -21,7 +21,7 @@ namespace All_In_One_Planner.Services
                 StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
                 HttpClient client = new HttpClient();
             
-                string url = "http://10.0.2.2:42348/api/Memos";
+                string url = "http://10.0.2.2:5192/api/Memos";
                 client.BaseAddress = new Uri(url);
                 HttpResponseMessage response = await client.PostAsync("", content);
 
@@ -35,7 +35,7 @@ namespace All_In_One_Planner.Services
                 string json = JsonConvert.SerializeObject(item);
                 StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
                 HttpClient client = new HttpClient();
-                string url = "http://10.0.2.2:7192/api/Memos/" + item.MemoID;
+                string url = "http://10.0.2.2:5192/api/Memos/" + item.MemoID;
                 client.BaseAddress = new Uri(url);
                 HttpResponseMessage response = await client.PutAsync("", content);
 
@@ -51,7 +51,7 @@ namespace All_In_One_Planner.Services
         {
 
             HttpClient client = new HttpClient();
-            string url = "http://10.0.2.2:7192/api/Memos/" + id;
+            string url = "http://10.0.2.2:5192/api/Memos/" + id;
             client.BaseAddress = new Uri(url);
             HttpResponseMessage response = await client.DeleteAsync("");
             if (response.IsSuccessStatusCode)
@@ -68,7 +68,7 @@ namespace All_In_One_Planner.Services
         {
             var memo = new Memo();
             HttpClient client = new HttpClient();
-            string url = "http://10.0.2.2:7192/api/Memos/" + id;
+            string url = "http://10.0.2.2:5192/api/Memos/" + id;
             client.BaseAddress = new Uri(url);
             HttpResponseMessage response = await client.GetAsync("");
             if (response.IsSuccessStatusCode)
@@ -83,7 +83,7 @@ namespace All_In_One_Planner.Services
         {
             var memos = new List<Memo>();
             HttpClient client = new HttpClient();
-            string url = "http://10.0.2.2:42348/api/Memos/";
+            string url = "http://10.0.2.2:5192/api/Memos/";
             client.BaseAddress = new Uri(url);
             HttpResponseMessage response = await client.GetAsync("");
             if (response.IsSuccessStatusCode)
@@ -100,7 +100,7 @@ namespace All_In_One_Planner.Services
             string json = JsonConvert.SerializeObject(item);
             StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
             HttpClient client = new HttpClient();
-            string url = "http://10.0.2.2:7192/api/Memos/" + item.MemoID;
+            string url = "http://10.0.2.2:5192/api/Memos/" + item.MemoID;
             client.BaseAddress = new Uri(url);
             HttpResponseMessage response = await client.PutAsync("", content);
 
