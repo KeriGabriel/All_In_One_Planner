@@ -15,35 +15,48 @@ namespace All_In_One_Planner.Services
 
         public async Task<bool> AddMemoAsync(Memo item)
         {
-            if (item.MemoID == null)
-            {
-                string json = JsonConvert.SerializeObject(item);
-                StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
-                HttpClient client = new HttpClient();
-            
-                string url = "http://10.0.2.2:5192/api/Memos";
-                client.BaseAddress = new Uri(url);
-                HttpResponseMessage response = await client.PostAsync("", content);
 
-                if (response.IsSuccessStatusCode)
-                {
-                    return await Task.FromResult(true);
-                }
-            }
-            else
-            {
-                string json = JsonConvert.SerializeObject(item);
-                StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
-                HttpClient client = new HttpClient();
-                string url = "http://10.0.2.2:5192/api/Memos/" + item.MemoID;
-                client.BaseAddress = new Uri(url);
-                HttpResponseMessage response = await client.PutAsync("", content);
+            string json = JsonConvert.SerializeObject(item);
+            StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+            HttpClient client = new HttpClient();
 
-                if (response.IsSuccessStatusCode)
-                {
-                    return await Task.FromResult(true);
-                }
+            string url = "http://10.0.2.2:5192/api/Memos";
+            client.BaseAddress = new Uri(url);
+            HttpResponseMessage response = await client.PostAsync("", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                return await Task.FromResult(true);
             }
+            //if (item.MemoID == null)
+            //{
+            //    string json = JsonConvert.SerializeObject(item);
+            //    StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+            //    HttpClient client = new HttpClient();
+
+            //    string url = "http://10.0.2.2:5192/api/Memos";
+            //    client.BaseAddress = new Uri(url);
+            //    HttpResponseMessage response = await client.PostAsync("", content);
+
+            //    if (response.IsSuccessStatusCode)
+            //    {
+            //        return await Task.FromResult(true);
+            //    }
+            //}
+            //else
+            //{
+            //    string json = JsonConvert.SerializeObject(item);
+            //    StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+            //    HttpClient client = new HttpClient();
+            //    string url = "http://10.0.2.2:5192/api/Memos/" + item.MemoID;
+            //    client.BaseAddress = new Uri(url);
+            //    HttpResponseMessage response = await client.PutAsync("", content);
+
+            //    if (response.IsSuccessStatusCode)
+            //    {
+            //        return await Task.FromResult(true);
+            //    }
+            //}
             return await Task.FromResult(true);
         }
 
