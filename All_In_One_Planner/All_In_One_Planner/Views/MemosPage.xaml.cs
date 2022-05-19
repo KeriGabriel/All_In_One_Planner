@@ -22,7 +22,7 @@ namespace All_In_One_Planner.Views
         {
             InitializeComponent();
 
-            BindingContext = _viewModel = new MemosViewModel(_plannerAPIService);
+            BindingContext = _viewModel = new MemosViewModel();
         }
 
         protected override void OnAppearing()

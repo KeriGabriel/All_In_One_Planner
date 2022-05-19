@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
+[assembly: Dependency(typeof(PlannerAPIService))]
 namespace All_In_One_Planner.ViewModels
 {
     public class MemosViewModel : BaseViewModel
@@ -18,9 +19,10 @@ namespace All_In_One_Planner.ViewModels
         public Command AddItemCommand { get; }
         public Command<Memo> ItemTapped { get; }
         private PlannerAPIService MyAPI { get; set; }
-        public MemosViewModel(PlannerAPIService service)
+       
+        public MemosViewModel()
         {
-            MyAPI = service;
+            MyAPI = DependencyService.Get<PlannerAPIService>();
             Title = "Daily";
             Items = new ObservableCollection<Memo>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
