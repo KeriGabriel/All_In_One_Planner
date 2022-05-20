@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(PlannerAPIService))]
+
 namespace All_In_One_Planner.ViewModels
 {
     public class MemosViewModel : BaseViewModel
