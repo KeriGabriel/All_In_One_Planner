@@ -19,6 +19,9 @@ namespace All_In_One_Planner.ViewModels
         public Command AddItemCommand { get; }
         public Command<Memo> ItemTapped { get; }
        
+
+
+       
         public MemosViewModel()
         {
             Title = "Daily";
@@ -36,8 +39,11 @@ namespace All_In_One_Planner.ViewModels
             try
             {
                 Items.Clear();
+
+                var items = await MyAPI.GetMemoAsync(true);
+
                 // var items = await DataStore.GetMemoAsync(true);
-                var items = await APIData.GetMemoAsync(true);
+
                 foreach (var item in items)
                 {
                     Items.Add(item);
