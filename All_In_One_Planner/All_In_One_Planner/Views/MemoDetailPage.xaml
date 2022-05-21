@@ -5,14 +5,10 @@
              Title="{Binding Title}">
 
     <StackLayout Spacing="20" Padding="15">
-        <Label Text="Text:" FontSize="Medium" />
+        <Label Text="Title:" FontSize="Medium" />
         <Label Text="{Binding Text}" FontSize="Small"/>
         <Label Text="Description:" FontSize="Medium" />
         <Label Text="{Binding Description}" FontSize="Small"/>
-        <Label Text="Type:" FontSize="Medium" />
-        <Label Text="{Binding Type}" FontSize="Small"/>
-        <Label Text="Date:" FontSize="Medium"/>
-        <DatePicker Date="{Binding DateSet}" IsEnabled="False" IsVisible="True"/>
     </StackLayout>
     
 </ContentPage>
