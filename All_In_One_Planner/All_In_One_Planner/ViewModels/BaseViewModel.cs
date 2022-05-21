@@ -6,12 +6,13 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 
+
 namespace All_In_One_Planner.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
         //does this need to be changed?
-        public PlannerAPIService<Memo> APIData => DependencyService.Get<PlannerAPIService<Memo>>();
+        public PlannerAPIService APIData => DependencyService.Get<PlannerAPIService>();
 
         bool isBusy = false;
         public bool IsBusy
