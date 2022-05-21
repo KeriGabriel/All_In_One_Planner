@@ -7,12 +7,18 @@ using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 
 [assembly: Xamarin.Forms.Dependency(typeof(PlannerAPIService))]
+
+
 namespace All_In_One_Planner.ViewModels
 {
    
     public class BaseViewModel : INotifyPropertyChanged
     {
+
         public PlannerAPIService MyAPI => DependencyService.Get<PlannerAPIService>();
+
+  
+
 
         bool isBusy = false;
         public bool IsBusy

@@ -1,4 +1,5 @@
-﻿using All_In_One_Planner.Services;
+﻿using All_In_One_Planner.Models;
+using All_In_One_Planner.Services;
 using All_In_One_Planner.Views;
 using System;
 using Xamarin.Forms;
