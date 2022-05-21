@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace All_In_One_Planner.Services
 {
-    public class PlannerAPIService : IData<Memo>
+    public class PlannerAPIService<T>
     {
         public PlannerAPIService() { }
 
