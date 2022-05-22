@@ -30,5 +30,12 @@ namespace All_In_One_Planner.Views
             base.OnAppearing();
             _viewModel.OnAppearing();
         }
+
+        private void DeleteBtn(object sender, EventArgs e)
+        {
+            var button=sender as Button;
+            var Memo=button.BindingContext as Memo;
+            _viewModel.DeleteItem.Execute(Memo);
+        }
     }
 }

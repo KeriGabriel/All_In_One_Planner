@@ -10,6 +10,9 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding AddItemCommand}" />
     </ContentPage.ToolbarItems>
+    <ContentPage.BindingContext>
+        <local:MemosViewModel/>
+    </ContentPage.BindingContext>
     <!--
       x:DataType enables compiled bindings for better performance and compile time validation of binding expressions.
       https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings
@@ -33,6 +36,7 @@
                             LineBreakMode="NoWrap"
                             Style="{DynamicResource ListItemDetailTextStyle}"
                             FontSize="13" />
+                        <Button Text="Delete" WidthRequest="80" HeightRequest="35" HorizontalOptions="End" Clicked="DeleteBtn"></Button>
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer 
                                 NumberOfTapsRequired="1"

@@ -18,6 +18,7 @@ namespace All_In_One_Planner.ViewModels
         public Command LoadItemsCommand { get; }
         public Command AddItemCommand { get; }
         public Command<Memo> ItemTapped { get; }
+        public Command<Memo> DeleteItem { get; }
        
 
 
@@ -29,6 +30,7 @@ namespace All_In_One_Planner.ViewModels
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
             ItemTapped = new Command<Memo>(OnItemSelected);
             AddItemCommand = new Command(OnAddItem);
+            DeleteItem = new Command<Memo>(OnDelete);
         }
         
 
@@ -87,6 +89,13 @@ namespace All_In_One_Planner.ViewModels
 
             // This will push the ItemDetailPage onto the navigation stack
             await Shell.Current.GoToAsync($"{nameof(MemoDetailPage)}?{nameof(MemoDetailViewModel.ItemId)}={item.MemoID}");
+        }
+
+        async void OnDelete(Memo item)
+        {
+            await MyAPI.DeleteMemoAsync(item.MemoID);
+            await Shell.Current.GoToAsync($"//{nameof(MemosPage)}");
+
         }
     }
 }
