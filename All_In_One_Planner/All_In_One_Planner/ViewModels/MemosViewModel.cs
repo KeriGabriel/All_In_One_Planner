@@ -20,8 +20,6 @@ namespace All_In_One_Planner.ViewModels
         public Command<Memo> ItemTapped { get; }
         public Command<Memo> DeleteItem { get; }
        
-
-
        
         public MemosViewModel()
         {
@@ -32,8 +30,6 @@ namespace All_In_One_Planner.ViewModels
             AddItemCommand = new Command(OnAddItem);
             DeleteItem = new Command<Memo>(OnDelete);
         }
-        
-
         async Task ExecuteLoadItemsCommand()
         {
             IsBusy = true;
@@ -60,13 +56,11 @@ namespace All_In_One_Planner.ViewModels
                 IsBusy = false;
             }
         }
-
         public void OnAppearing()
         {
             IsBusy = true;
             SelectedItem = null;
         }
-
         public Memo SelectedItem
         {
             get => _selectedItem;
@@ -75,8 +69,7 @@ namespace All_In_One_Planner.ViewModels
                 SetProperty(ref _selectedItem, value);
                 OnItemSelected(value);
             }
-        }
-
+        }     
         private async void OnAddItem(object obj)
         {
             await Shell.Current.GoToAsync(nameof(NewMemoPage));
@@ -90,12 +83,12 @@ namespace All_In_One_Planner.ViewModels
             // This will push the ItemDetailPage onto the navigation stack
             await Shell.Current.GoToAsync($"{nameof(MemoDetailPage)}?{nameof(MemoDetailViewModel.ItemId)}={item.MemoID}");
         }
-
         async void OnDelete(Memo item)
         {
             await MyAPI.DeleteMemoAsync(item.MemoID);
-            await Shell.Current.GoToAsync($"//{nameof(MemosPage)}");
-
+            await Application.Current.MainPage.DisplayAlert("Alert ", item.Text+" has been Deleted", "OK");
+            await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");
+            await Shell.Current.GoToAsync($"//{nameof(MemosPage)}");           
         }
     }
 }
