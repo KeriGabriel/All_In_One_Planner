@@ -12,7 +12,22 @@
     <ContentPage.Content>
         <StackLayout>
             <controls:Calendar
-        Events="{Binding Events}">
+                Events="{Binding Events}" 
+                    MonthLabelColor="#37474F"
+                    YearLabelColor="#37474F"
+                    EventIndicatorColor="#0277BD"
+                    EventIndicatorSelectedColor="White"
+                    DaysTitleColor="#37474F"
+                    DeselectedDayTextColor="Blue"
+                    OtherMonthDayColor="Gray"
+                    SelectedDayTextColor="Cyan"
+                    SelectedDayBackgroundColor="#546E7A"
+                    SelectedDateColor="#37474F"
+                    SelectedTodayTextColor="#37474F"
+                    TodayOutlineColor="Blue"
+                    TodayFillColor="Silver"
+                    TodayTextColor="Blue">
+                
                 <controls:Calendar.EventTemplate>
                     <DataTemplate>
                         <StackLayout

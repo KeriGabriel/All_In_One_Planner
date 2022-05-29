@@ -27,15 +27,18 @@
                         <Label Text="{Binding Text}" 
                             LineBreakMode="NoWrap" 
                             Style="{DynamicResource ListItemTextStyle}" 
-                            FontSize="16" />
+                            FontSize="20"
+                            FontAttributes="Bold"/>
                         <Label Text="{Binding Type}" 
                             LineBreakMode="NoWrap"
                             Style="{DynamicResource ListItemDetailTextStyle}"
-                            FontSize="13" />
+                            FontSize="16"
+                            FontAttributes="Bold"/>
                         <Label Text="{Binding Date}" 
                             LineBreakMode="NoWrap"
                             Style="{DynamicResource ListItemDetailTextStyle}"
-                            FontSize="13" />
+                            FontSize="16"
+                            FontAttributes="Bold" />
                         <Button Text="Delete" WidthRequest="80" HeightRequest="35" HorizontalOptions="End" Clicked="DeleteBtn"></Button>
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer 

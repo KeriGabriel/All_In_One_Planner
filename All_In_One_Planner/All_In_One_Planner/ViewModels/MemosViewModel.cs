@@ -23,7 +23,7 @@ namespace All_In_One_Planner.ViewModels
        
         public MemosViewModel()
         {
-            Title = "Daily";
+            Title = "Memos";
             Items = new ObservableCollection<Memo>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
             ItemTapped = new Command<Memo>(OnItemSelected);

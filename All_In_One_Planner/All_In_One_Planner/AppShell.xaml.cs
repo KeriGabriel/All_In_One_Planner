@@ -14,6 +14,7 @@ namespace All_In_One_Planner
             Routing.RegisterRoute(nameof(MemoDetailPage), typeof(MemoDetailPage));
             Routing.RegisterRoute(nameof(NewMemoPage), typeof(NewMemoPage));
             Routing.RegisterRoute(nameof(WeeklyPage), typeof(WeeklyPage));
+            Routing.RegisterRoute(nameof(CalendarPage), typeof(CalendarPage));
         }
 
         private async void OnMenuItemClicked(object sender, EventArgs e)
