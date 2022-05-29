@@ -8,7 +8,7 @@
              Shell.NavBarIsVisible="False">
     <ContentPage.Content>
         <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
-            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Frame BackgroundColor="#37474F" Padding="24" CornerRadius="0">
                 <Label Text="All-In-One Planner" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
             </Frame>
             <Label Text="Login" FontSize="30" HorizontalTextAlignment="Center" Padding="30,10,30,0"/>

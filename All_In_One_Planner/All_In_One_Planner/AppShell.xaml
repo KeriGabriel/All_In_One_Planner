@@ -35,6 +35,9 @@
             -->
             <Style Class="FlyoutItemLabelStyle" TargetType="Label">
                 <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="FontSize" Value="25"></Setter>
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+                <!--<Setter Property="FontFamily" Value="Trashtalk"></Setter>-->
             </Style>
             <Style Class="FlyoutItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
                 <Setter Property="VisualStateManager.VisualStateGroups">
