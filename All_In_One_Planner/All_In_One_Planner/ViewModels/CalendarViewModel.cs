@@ -18,15 +18,7 @@ namespace All_In_One_Planner.ViewModels
         public CalendarViewModel()
         {
             Title = "Calendar";
-            //int count = 0;
-            //MockData mockData = new MockData();
-            //DateTime date;
-            // date = mockData.GetItemAsync(date);
 
-            //for (int i = 0; i < items.ToArray().Length; i++)
-            //{
-
-            //}
             Events = new EventCollection
             {
 

@@ -14,11 +14,7 @@ namespace All_In_One_Planner.ViewModels
    
     public class BaseViewModel : INotifyPropertyChanged
     {
-
         public PlannerAPIService MyAPI => DependencyService.Get<PlannerAPIService>();
-
-  
-
 
         bool isBusy = false;
         public bool IsBusy

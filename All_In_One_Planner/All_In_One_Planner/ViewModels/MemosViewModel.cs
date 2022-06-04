@@ -14,7 +14,7 @@ namespace All_In_One_Planner.ViewModels
     {
         private Memo _selectedItem;
 
-        public ObservableCollection<Memo> Items { get; }
+        public ObservableCollection<Memo> Memos { get; }
         public Command LoadItemsCommand { get; }
         public Command AddItemCommand { get; }
         public Command<Memo> ItemTapped { get; }
@@ -24,7 +24,7 @@ namespace All_In_One_Planner.ViewModels
         public MemosViewModel()
         {
             Title = "Memos";
-            Items = new ObservableCollection<Memo>();
+            Memos = new ObservableCollection<Memo>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
             ItemTapped = new Command<Memo>(OnItemSelected);
             AddItemCommand = new Command(OnAddItem);
@@ -36,7 +36,7 @@ namespace All_In_One_Planner.ViewModels
 
             try
             {
-                Items.Clear();
+                Memos.Clear();
 
                 var items = await MyAPI.GetMemoAsync(true);
 
@@ -44,7 +44,7 @@ namespace All_In_One_Planner.ViewModels
 
                 foreach (var item in items)
                 {
-                    Items.Add(item);
+                    Memos.Add(item);
                 }
             }
             catch (Exception ex)
@@ -83,6 +83,7 @@ namespace All_In_One_Planner.ViewModels
             // This will push the ItemDetailPage onto the navigation stack
             await Shell.Current.GoToAsync($"{nameof(MemoDetailPage)}?{nameof(MemoDetailViewModel.ItemId)}={item.MemoID}");
         }
+        //Selects Memo by ID and then deletes it from API
         async void OnDelete(Memo item)
         {
             await MyAPI.DeleteMemoAsync(item.MemoID);

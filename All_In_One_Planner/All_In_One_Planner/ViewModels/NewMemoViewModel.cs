@@ -9,7 +9,6 @@ namespace All_In_One_Planner.ViewModels
 {
     public class NewMemoViewModel : BaseViewModel
     {
-        //private int _id;
         private string text;
         private string description;
         private string type;
@@ -28,21 +27,6 @@ namespace All_In_One_Planner.ViewModels
                 && !String.IsNullOrWhiteSpace(description);
         }
 
-        //public int GenerateId(int _id)
-        //{
-        //    if(_id != null)
-        //    {
-        //        Interlocked.Increment(ref _id);
-        //    }
-        //    return _id;
-        //}
-
-        //Remainder of Program unchange
-        //public int ID
-        //{
-        //    get => _id;
-        //    set => SetProperty(ref _id, value);
-        //}
         public string Text
         {
             get => text;
@@ -83,10 +67,7 @@ namespace All_In_One_Planner.ViewModels
                 Type = Type
             };
 
-
             await MyAPI.AddMemoAsync(newItem);
-
-
 
             // This will pop the current page off the navigation stack
             await Shell.Current.GoToAsync("..");
