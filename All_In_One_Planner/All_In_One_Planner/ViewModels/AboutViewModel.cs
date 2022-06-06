@@ -11,7 +11,5 @@ namespace All_In_One_Planner.ViewModels
         {
             Title = "About";
         }
-
-        public ICommand OpenWebCommand { get; }
     }
 }

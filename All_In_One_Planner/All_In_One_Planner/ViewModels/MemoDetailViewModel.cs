@@ -6,7 +6,7 @@ using Xamarin.Forms;
 
 namespace All_In_One_Planner.ViewModels
 {
-    [QueryProperty(nameof(ItemId), nameof(ItemId))]
+    [QueryProperty(nameof(MemoId), nameof(MemoId))]
     public class MemoDetailViewModel : BaseViewModel
     {
         private string itemId;
@@ -37,7 +37,7 @@ namespace All_In_One_Planner.ViewModels
             get => date;
             set => SetProperty(ref date, value);
         }
-        public string ItemId
+        public string MemoId
         {
             get
             {

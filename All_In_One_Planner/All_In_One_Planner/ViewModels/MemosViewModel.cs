@@ -40,8 +40,6 @@ namespace All_In_One_Planner.ViewModels
 
                 var items = await MyAPI.GetMemoAsync(true);
 
-                // var items = await DataStore.GetMemoAsync(true);
-
                 foreach (var item in items)
                 {
                     Memos.Add(item);
@@ -81,7 +79,7 @@ namespace All_In_One_Planner.ViewModels
                 return;
 
             // This will push the ItemDetailPage onto the navigation stack
-            await Shell.Current.GoToAsync($"{nameof(MemoDetailPage)}?{nameof(MemoDetailViewModel.ItemId)}={item.MemoID}");
+            await Shell.Current.GoToAsync($"{nameof(MemoDetailPage)}?{nameof(MemoDetailViewModel.MemoId)}={item.MemoID}");
         }
         //Selects Memo by ID and then deletes it from API
         async void OnDelete(Memo item)
