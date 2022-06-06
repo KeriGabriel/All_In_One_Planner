@@ -21,28 +21,27 @@ namespace All_In_One_Planner.ViewModels
 
             Events = new EventCollection
             {
-
                 [DateTime.Now] = new List<Memo>
 
                 {
-                    new Memo { Text = "Cool event1", Description = "This is Cool event1's description!" },
-                    new Memo { Text = "Cool event2", Description = "This is Cool event2's description!" }
+                    new Memo { Text = "Dr Appt", Description = " 8:00 be early to fill out paperwork" },
+                    new Memo { Text = "Lecture", Description = "Last Day of lecture" }   
                 },
                 // 5 days from today
                 [DateTime.Now.AddDays(5)] = new List<Memo>
                 {
-                    new Memo { Text = "Cool event3", Description = "This is Cool event3's description!" },
-                    new Memo { Text = "Cool event4", Description = "This is Cool event4's description!" }
+                    new Memo { Text = "Oil Change", Description = "Check windshild wipers" },
+                    new Memo { Text = "Tires", Description = "Check Breaks" }
                 },
                 // 3 days ago
                 [DateTime.Now.AddDays(-3)] = new List<Memo>
                 {
-                    new Memo { Text = "Cool event5", Description = "This is Cool event5's description!" }
+                    new Memo { Text = "This is the past", Description = "Back to the future" }
                 },
                 // custom date
-                [new DateTime(2020, 3, 16)] = new List<Memo>
+                [new DateTime(2022, 6, 17)] = new List<Memo>
                 {
-                    new Memo { Text = "Cool event6", Description = "This is Cool event6's description!" }
+                    new Memo { Text = "Graduation Day", Description = "Centralia College Graduation 2022" }
                 }
             };
 

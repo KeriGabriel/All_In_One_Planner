@@ -29,7 +29,7 @@
                           
                     Padding="15,0,0,0">
                         <Label
-                    Text="{Binding Name}"
+                    Text="{Binding Text}"
                     FontAttributes="Bold"
                     FontSize="Small" />
                         <Label
